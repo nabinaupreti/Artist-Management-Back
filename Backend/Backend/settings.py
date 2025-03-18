@@ -22,6 +22,10 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-h5-((v%l!xfk#ahu5v-w3fbj7*2%3xz!6v&xm04@hth-49dbu_'
 
+# SECRET_KEY=os.getenv('SECRET_KEY')
+# JWT_SECRET_KEY=os.getenv('JWT_SECRET_KEY')
+
+
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
@@ -37,7 +41,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'rest_framework',
     'api',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -74,7 +80,16 @@ WSGI_APPLICATION = 'Backend.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-
+DATABASES = {
+       'default': {
+           'ENGINE': 'django.db.backends.postgresql',
+           'NAME': 'artist',
+           'USER': 'book',
+           'PASSWORD': 'admin',
+           'HOST': 'localhost',
+           'PORT': '5432',
+       }
+   }
 
 
 # Password validation
