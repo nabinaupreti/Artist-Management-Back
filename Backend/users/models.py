@@ -18,3 +18,11 @@ class UserModel:
         with connection.cursor() as cursor:
             cursor.execute("SELECT * FROM users WHERE email = %s;", [email])
             return cursor.fetchone()
+
+
+# "first_name": "test",
+#     "last_name": "test",
+#     "emil": "nabina@gmail.com",
+#     "password": "1234",
+#     "gender":"male",
+#     "role_type": "artist"

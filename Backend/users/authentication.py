@@ -34,3 +34,10 @@ class JWTHandler:
             return None
         except jwt.InvalidTokenError:
             return None
+        
+    @staticmethod
+    def get_user_id_from_token(token):
+        decoded = JWTHandler.decode_token(token)
+        return decoded["user_id"] if decoded else None
+
+       

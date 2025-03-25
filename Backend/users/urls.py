@@ -17,9 +17,3 @@ urlpatterns = [
     path("login/", LoginView.as_view(), name="login"),
 ]
 
-# "first_name": "test",
-#     "last_name": "test",
-#     "emil": "nabina@gmail.com",
-#     "password": "1234",
-#     "gender":"male",
-#     "role_type": "artist"
